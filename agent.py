@@ -147,7 +147,7 @@ class Agent:
     - defines variables to plot later
     - kicks off training loop to train model until we exit out
     - get old state --> predict final move --> apply final move --> get new state
-    - 
+    - saves our Model if we get a high score
 """
 
 
@@ -177,7 +177,7 @@ def train():
 
             if score > record:
                 record = score
-                #TODO: agent.model.save()
+                agent.model.save()
 
             print('Game:', agent.games, 'Score:', score, 'Record:', record)
 
